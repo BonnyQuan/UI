@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify, R
 app = Flask(__name__, static_url_path='/static')
 app.secret_key = 'your_secret_key'
 
+
 # Dictionary to store quiz answers
 quiz_data = {
     "1": {
@@ -157,8 +158,8 @@ def quiz_question(q_number):
             return redirect(url_for('quiz_question', q_number=next_q_number))
         else:
             return redirect(url_for('quiz_result'))
-        
-@app.route('/result', methods=['POST', 'GET'])
+
+@app.route('/result', methods=['POST'])
 def quiz_result():
     user_answers = {}
 
