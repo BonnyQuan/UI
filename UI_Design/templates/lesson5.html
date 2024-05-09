@@ -1,13 +1,6 @@
+{% extends "layout.html" %} {% block content %}
 
-{% extends "layout.html" %}
-{% block content %}
-<script>
-    function show(shown, hidden) {
-        document.getElementById(shown).style.display = 'block';
-        document.getElementById(hidden).style.display = 'none';
-    }
-</script>
-
+    
 <style>
   @font-face {
     font-family: "roboto";
@@ -24,6 +17,20 @@
   body {
     background-color: #e4eef7;
     color: black;
+  }
+    h1{
+     font-family: roboto;
+  }
+  h2{
+     font-family: roboto;
+  }
+  h4{
+     font-family: roboto;
+     padding-bottom: 10px;
+  }
+  p{
+      font-family: nunito;
+      font-size: 18px;
   }
   .row {
     display: flex;
@@ -45,6 +52,7 @@
     text-align: center;
     color: #073763ff;
     margin: 20px;
+    padding-bottom: 60px;
   }
   .div-learn1 {
     background-color: #073763ff;
@@ -186,27 +194,46 @@ ul.financial-highlights p {
 </style>
 
 <div class="container">
-    <div  class="div-wrap">
+    <div class="div-wrap">
         <div class="div-title">
+            <h1>Cash Flow Statement Example</h1>
         </div>
-        <div class="row">
-            <div class="col-4 div-learn1">
-                <h2>Summary of Cash Flow Statement</h2>
+        <div class="page2-wrapper row">
+            <div class="col-6 div-content-2">
+                <ul class="financial-highlights">
+                    <li>
+                        <h4>Free Cash Flow</h4>
+                        <p><b>Free cash flow = Operating cash flow - capital expenditures from investments</b></p>
+                        <p>In this example, that would be the net cash from operations minus the equipment cost.</p>
+                        <p><b> 2,012,000 - 500,000 = 1,512,000</b></p>
+                    </li>
+                    <li>
+                        <h4>Operating Cash Flow Ratio</h4>
+                        <p>The operating cash flow ratio represents the company's <b>ability to pay its debts with existing cash flows</b>. It is determined by <b>dividing operating cash flow by current liabilities</b>, the latter of which can be found on a different financial statement, the balance sheet'</p>
+                        <p> Here the operating cash flow is <b>2,012,000</b></p>
+                    </li>
+                    <li>
+                        <h4>Implications for Business Operations:</h4>
+                        <p>Positive operating cash flow means that core operations are generating business and that there is enough money to buy new inventory.</p>
+                    </li>
+                </ul>
             </div>
-            <div class="col-8 div-content">
-                <p>The cash flow statement provides a summary of how a company generates and uses cash during a specific period. It consists of three main sections: cash flow from operating activities, cash flow from investing activities, and cash flow from financing activities. Each section reflects different aspects of the company's financial activities.</p>
-                <p>For a detailed explanation, watch this <a href="https://youtu.be/z7IW7bmRyLQ?si=Yiasxt6Eci0suoaq" target="_blank">YouTube video</a>.</p>
+            <div class="col-6 div-img-example d-flex align-items-center">
+                <img src="static/images/example.png" alt="Example of a Cash Flow Statement" />
             </div>
         </div>
         <div class="row navigation">
             <div class="col-4 btn-next">
-                <a href="/" class="btn btn-primary btn-lg btn-block mt-4">Return Home</a>
+              <a href="/lesson4" class="btn btn-primary btn-lg btn-block mt-4">Previous</a>
             </div>
             <div class="col-4 col-btn">
                 <a href="/lesson6" class="btn btn-primary btn-lg btn-block mt-4">Next</a>
             </div>
         </div>
+        <div class="div-title">
+          <h2>Lesson 5 / 6</h2>
+      </div>
     </div>
-   
+
 </div>
 {% endblock %}

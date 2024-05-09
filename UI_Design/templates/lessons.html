@@ -30,13 +30,13 @@
     }
     .right-column {
         flex: 0 0 60%; /* 40% width */
-        background-image: url("/static/images/quiz1.jpg");
+        background-image: url("/static/images/lessons.png");
         background-size: cover;
         background-position: center;
     }
     .welcome {
         font-family: roboto-bold;
-        font-size: 40px;
+        font-size: 50px;
         text-align: left;
         margin-left: 40px;
         margin-bottom: 40px;
@@ -51,40 +51,32 @@
         margin-bottom: 40px;
         color: #9ee0eb;
     }
-    .button-container {
-        display: flex;
-        margin-left: 25px;
-        justify-content: left;
-    }
-    /* Style the buttons */
-    .button-container button {
-        margin: 0 15px;
-        width: 160px;
-        padding: 8px;
+    .lesson-link {
+        font-family: roboto;
+        display: block;
+        margin-bottom: 20px;
+        margin-left: 50px;
+        text-decoration: none;
+        color: #fff;
         font-family: nunito;
-        font-size: 18px;
+        font-size: 26px;
     }
-    .btn-primary {
-        background-color: #126cce;
-        border-color: #007bff;
-    }
-    .btn-primary:hover {
-        background-color: #034082;
-        border-color: #0056b3;
+    .lesson-link:hover {
+        text-decoration: underline;
     }
 </style>
 
 <div class="flex-container">
     <div class="left-column">
-        <div class="welcome">Time to test your knowledge!</div>
-        <div class="start">Ready to start the quiz?</div>
-        <div class="button-container">
-            <form method="POST" action="{{ url_for('startquiz') }}">
-                <button type="submit" class="btn btn-primary">Start Quiz</button>
-            </form>
-            <form method="GET" action="{{ url_for('lessons') }}">
-                <button type="submit" class="btn btn-secondary">Back to Lessons</button>
-            </form>
+        <div class="welcome">Lessons:</div>
+        <div class="lesson-links">
+            <a href="/lesson1" class="lesson-link">1: Introduction</a>
+            <a href="/lesson2" class="lesson-link">2: Cash from Operations</a>
+            <!-- Repeat the pattern for Lesson 3 to Lesson 6 -->
+            <a href="/lesson3" class="lesson-link">3: Cash from Investing</a>
+            <a href="/lesson4" class="lesson-link">4: Cash from Financing</a>
+            <a href="/lesson5" class="lesson-link">5: Cash Flow Statement Example </a>
+            <a href="/lesson6" class="lesson-link">6: Summary</a>
         </div>
     </div>
     <div class="right-column"></div>

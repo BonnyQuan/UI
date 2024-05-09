@@ -28,7 +28,7 @@ quiz_data = {
             "D. Cash flows from operating, investing, and financing activities."
         ],
         "answer": "C. Cash flows from financing activities.",
-        "lesson": "lesson5",
+        "lesson": "lesson4",
     },
     "3": {
         "number": 3,
@@ -80,15 +80,15 @@ quiz_data = {
     },
     "7": {
         "number": 7,
-        "question": "How do you calculate the cash flow to debt ratio?",
+        "question": "Which of the following items is an example of an operating cash flow?",
         "options": [
-            "A. Divide operating cash flow by total liabilities.",
-            "B. Divide net income by total assets.",
-            "C. Divide operating cash flow by net income.",
-            "D. Divide operating cash flow by total debt."
+            "A. Sale of equipment.",
+            "B. Payment of dividends to shareholders.",
+            "C. Revenue from sales.",
+            "D. Issuance of long-term debt."
         ],
-        "answer": "D. Divide operating cash flow by total debt.",
-        "lesson": "lesson6",
+        "answer": "C. Revenue from sales.",
+        "lesson": "lesson2",
     },
     "8": {
         "number": 8,
@@ -100,7 +100,7 @@ quiz_data = {
             "D. Net income."
         ],
         "answer": "C. Cash flow from operations.",
-        "lesson": "lesson5",
+        "lesson": "lesson6",
     },
     "9": {
         "number": 9,
@@ -112,7 +112,7 @@ quiz_data = {
             "D. To determine the company's market share."
         ],
         "answer": "B. To evaluate the company's liquidity and solvency.",
-        "lesson": "lesson1",
+        "lesson": "lesson6",
     },
     "10": {
         "number": 10,
@@ -133,11 +133,9 @@ quiz_data = {
 def home():
     return render_template('home.html')
 
-@app.route('/learn')
-def learn():
-    # Here you can implement the logic to fetch the learning material for the specified lesson_number
-    # For now, just rendering the learning page
-    return render_template('lesson1.html')
+@app.route('/lessons')
+def lessons():
+    return render_template('lessons.html')
 
 @app.route('/lesson1')
 def lesson1():

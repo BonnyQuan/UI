@@ -1,6 +1,12 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %}
+{% block content %}
+<script>
+    function show(shown, hidden) {
+        document.getElementById(shown).style.display = 'block';
+        document.getElementById(hidden).style.display = 'none';
+    }
+</script>
 
-    
 <style>
   @font-face {
     font-family: "roboto";
@@ -18,6 +24,20 @@
     background-color: #e4eef7;
     color: black;
   }
+    h1{
+     font-family: roboto;
+  }
+  h2{
+     font-family: roboto;
+  }
+  h4{
+      font-family: roboto;
+      padding-top: 20px;
+  }
+  p{
+      font-family: nunito;
+      font-size: 18px;
+  }
   .row {
     display: flex;
     justify-content: space-between; /* This spreads the children elements across the space */
@@ -30,7 +50,8 @@
   }
   .container {
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 50px;
     flex: auto;
   }
   .div-title {
@@ -38,15 +59,18 @@
     text-align: center;
     color: #073763ff;
     margin: 20px;
+    padding-bottom: 60px;
   }
   .div-learn1 {
     background-color: #073763ff;
     color: white;
+    align-items: center;
     padding: 20px;
     padding-top: 150px;
     /* margin:20px; */
   }
   .div-content {
+    font-family: nunito;
     padding: 20px;
     padding-top: 150px;
     background-color: white;
@@ -176,42 +200,72 @@ ul.financial-highlights p {
     margin-bottom: 12px;
     margin-top: -15px;
   }
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height:width) */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%; /* You can adjust this width as needed */
+    height: 90%; /* You can adjust this height as needed */
+}
 </style>
 
 <div class="container">
-    <div>
+    <div class="div-wrap">
         <div class="div-title">
-            <h1>Cash Flow Statement Example</h1>
+          <h1>Summary</h1>
         </div>
-        <div class="page2-wrapper row">
-            <div class="col-6 div-content-2">
-                <ul class="financial-highlights">
-                    <li>
-                        <h4>Net Cash Flow - Fiscal Year 2017:</h4>
-                        <p>From this CFS, we can see that the net cash flow for the 2017 fiscal year was $1,522,000.</p>
-                    </li>
-                    <li>
-                        <h4>Source of Positive Cash Flow:</h4>
-                        <p>The bulk of the positive cash flow stems from cash earned from operations, which is a good sign for investors.</p>
-                    </li>
-                    <li>
-                        <h4>Implications for Business Operations:</h4>
-                        <p>It means that core operations are generating business and that there is enough money to buy new inventory.</p>
-                    </li>
-                </ul>
+        <div class="row">
+            <div class="col-4 div-learn1">
+                <h2>Summary of Cash Flow Statement</h2>
             </div>
-            <div class="col-6 div-img-example">
-                <img src="static/images/example.png" alt="Example of a Cash Flow Statement" />
+            <div class="col-8 div-content">
+                <p>The cash flow statement provides a summary of how a company <b>generates and uses cash during a specific period.</b> It consists of three main sections: cash flow from operating activities, cash flow from investing activities, and cash flow from financing activities. Each section reflects different aspects of the company's financial activities.</p>
+                <h4>Why is the cash flow statement important? </h4>
+                <div class="video-container">
+                 <div id = "player">
+                    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/z7IW7bmRyLQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                 </div>  
+                </div>
             </div>
         </div>
         <div class="row navigation">
             <div class="col-4 btn-next">
-                <a href="/lesson5" class="btn btn-primary btn-lg btn-block mt-4" onclick="return show('Page1','Page2');">Previous</a>
+              <a href="/lesson5" class="btn btn-primary btn-lg btn-block mt-4">Previous</a>
             </div>
             <div class="col-4 col-btn">
-                <a href="/startquiz" class="btn btn-primary btn-lg btn-block mt-4" onclick="return show('Page3','Page2');">Quiz</a>
+                <a href="/startquiz" class="btn btn-primary btn-lg btn-block mt-4">Quiz</a>
             </div>
         </div>
-    </div>
+        <div class="div-title">
+          <h2>Lessons Completed!</h2>
+        </div>
+    </div>   
 </div>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '315',
+    width: '560',
+    videoId: 'z7IW7bmRyLQ',
+    playerVars: {
+      'start': 188, // Start time in seconds
+      'end': 282 // End time in seconds
+    }
+  });
+}
+</script>
 {% endblock %}
+
+

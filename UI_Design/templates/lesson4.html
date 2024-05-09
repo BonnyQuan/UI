@@ -44,6 +44,7 @@
     text-align: center;
     color: #073763ff;
     margin: 20px;
+    padding-bottom: 60px;
   }
   .div-learn1 {
     background-color: #073763ff;
@@ -171,40 +172,46 @@ ul.financial-highlights p {
   .btn-next {
     margin-right: 0;
   }
+  h1{
+     font-family: roboto;
+  }
+  h2{
+     font-family: roboto;
+  }
+  p{
+      font-family: nunito;
+      font-size: 18px;
+  }
 
-  /* Hide radio button */
-  input[type="radio"] {
-    display: none;
-  }
-  #error-message {
-    display: none;
-    color: red;
-    margin-bottom: 12px;
-    margin-top: -15px;
-  }
 </style>
 
 <div class="container">
     <div  class="div-wrap">
-        <div class="div-title">
-        </div>
+      <div class="div-title">
+       <h1> Cash Flow Types</h1>
+      </div>
         <div class="row">
             <div class="col-4 div-learn1">
                 <h2>Understanding Cash Flow from Financing</h2>
             </div>
             <div class="col-8 div-content">
-                <p>Cash flow from financing activities reflects the inflows and outflows of cash resulting from activities such as issuing or repurchasing stocks, issuing or repaying debt, and paying dividends. It indicates how a company raises capital and how it distributes it to shareholders and creditors.</p>
+                <p>Cash flow from financing activities reflects the inflows and outflows of cash resulting from activities such as <b>issuing or repurchasing stocks, issuing or repaying debt/loans, and paying dividends.</b> It indicates how a company raises <b>capital</b> and how it <b>distributes it to shareholders and creditors.</b></p>
+                <img src="/static/images/financing.png" alt="AT&T Fiscal Year 2012 Cash from Operating Activities" style="width:100%; max-width:600px; margin-top:20px;">
             </div>
         </div>
         <div class="row navigation">
             <div class="col-4 btn-next">
-                <a href="/" class="btn btn-primary btn-lg btn-block mt-4">Return Home</a>
+              <a href="/lesson3" class="btn btn-primary btn-lg btn-block mt-4">Previous</a>
             </div>
             <div class="col-4 col-btn">
                 <a href="/lesson5" class="btn btn-primary btn-lg btn-block mt-4">Next</a>
             </div>
         </div>
+        <div class="div-title">
+          <h2>Lesson 4 / 6</h2>
+      </div>
     </div>
+
    
 </div>
 {% endblock %}
